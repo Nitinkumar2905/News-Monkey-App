@@ -1,12 +1,9 @@
-import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
-
-export class NewsItem extends Component {
-  render() {
-    let {title, description, imageUrl, newsUrl, author, date} = this.props
+import React from 'react'
+const NewsItem=(props)=> {
+    let {title, description, imageUrl, newsUrl, author, date} = props
     return (
       <>
-        <div className="card my-2">
+        <div className="card my-2 d-flex flex-wrap align-content-center">
           <img src={!imageUrl?"https://data1.ibtimes.co.in/en/full/784804/sony-shut-pixelopus-developer-video-game-concrete-genie.jpg":imageUrl} className="card-img-top" alt="..."/>
           <div className="card-body">
             <h5 className="card-title">{title}....</h5>
@@ -17,7 +14,6 @@ export class NewsItem extends Component {
         </div>
       </>
     )
-  }
 }
 
 export default NewsItem
