@@ -58,8 +58,9 @@ const News =(props)=> {
     return (
       <>
         {<div className='container my-3 text-center' style={{border: '0px solid red'}}>
-          {loading&&<h1 className='my-3 text-center'>NewsMonkey - Top Headlines on <span className='text-primary'>{capitalizeFirsLetter(props.category)}</span></h1>}
-          {!loading && articles?<span className='flex-end d-flex px-3 py-1 text-center text-white' style={{backgroundColor:'black', border:'2px solid rgb(13,110,270)', borderRadius:'8px', width:'fit-content'}}>Page Number : {page}</span>:<div className='text-danger fs-2' style={{background:"black",padding:"10px", borderRadius:"8px"}}>API requests limit has reached</div>}
+          {!loading&&<h1 className='my-3 text-center'>NewsMonkey - Top Headlines on <span className='text-primary'>{capitalizeFirsLetter(props.category)}</span></h1>}
+          {!loading && <span className='flex-end d-flex px-3 py-1 text-center text-white' style={{backgroundColor:'black', border:'2px solid rgb(13,110,270)', borderRadius:'8px', width:'fit-content'}}>Page Number : {page} / {Math.ceil(totalResults/props.pageSize)}</span>}
+          {!loading && !articles && <div>API request access has reached its limit</div>}
           {loading &&<Spinner/>}
           <div className='container row my-5' style={{}}>
             {!loading && articles && articles?.map((element) => {
