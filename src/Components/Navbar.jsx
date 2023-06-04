@@ -1,19 +1,21 @@
-import React, { useEffect } from "react";
+import React , {useEffect} from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "./logo.jpeg";
 const Navbar = (props) => {
   const location = useLocation();
-  useEffect(() => {
+  useEffect(()=>{
     console.log(location.pathname)
-  }, [location]);
+  },[location]);
   return (
     <>
       <nav
-        className={`border-bottom border-${props.mode
-          }z-1 navbar navbar-expand-lg sticky-top  navbar-${props.mode} bg-${props.mode === "Dark" ? "dark" : "white"
-          } fs-5 " text-${props.mode === "Dark" ? "white" : "dark"}`}
-        style={{ hover: 'text-primary' }}
-      >
+        className={`border-bottom border-${
+          props.mode
+        }z-1 navbar navbar-expand-lg sticky-top  navbar-${props.mode} bg-${
+          props.mode === "Dark" ? "dark" : "white"
+        } fs-5 " text-${props.mode === "Dark" ? "white" : "dark"}`}
+        style={{hover:'text-primary'}}
+        >
         <div className="container-fluid justify-content-between d-flex flex-end">
           <Link
             className="navbar-brand"
@@ -56,8 +58,9 @@ const Navbar = (props) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${location.pathname === "/home" ? "active" : ""
-                    }`}
+                  className={`nav-link ${
+                    location.pathname === "/home" ? "active" : ""
+                  }`}
                   aria-current="page"
                   style={{
                     color: `${props.mode === "Dark" ? "white" : "black"}`,
@@ -68,8 +71,9 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${location.pathname === "/home" ? "active" : ""
-                    }`}
+                  className={`nav-link ${
+                    location.pathname === "/home" ? "active" : ""
+                  }`}
                   style={{
                     color: `${props.mode === "Dark" ? "white" : "black"}`,
                   }}
@@ -79,8 +83,9 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${location.pathname === "/home" ? "active" : ""
-                    }`}
+                  className={`nav-link ${
+                    location.pathname === "/home" ? "active" : ""
+                  }`}
                   style={{
                     color: `${props.mode === "Dark" ? "white" : "black"}`,
                   }}
@@ -90,8 +95,9 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${location.pathname === "/home" ? "active" : ""
-                    }`}
+                  className={`nav-link ${
+                    location.pathname === "/home" ? "active" : ""
+                  }`}
                   style={{
                     color: `${props.mode === "Dark" ? "white" : "black"}`,
                   }}
@@ -101,8 +107,9 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${location.pathname === "/home" ? "active" : ""
-                    }`}
+                  className={`nav-link ${
+                    location.pathname === "/home" ? "active" : ""
+                  }`}
                   style={{
                     color: `${props.mode === "Dark" ? "white" : "black"}`,
                   }}
@@ -112,8 +119,9 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${location.pathname === "/home" ? "active" : ""
-                    }`}
+                  className={`nav-link ${
+                    location.pathname === "/home" ? "active" : ""
+                  }`}
                   style={{
                     color: `${props.mode === "Dark" ? "white" : "black"}`,
                   }}
@@ -123,8 +131,9 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${location.pathname === "/home" ? "active" : ""
-                    }`}
+                  className={`nav-link ${
+                    location.pathname === "/home" ? "active" : ""
+                  }`}
                   style={{
                     color: `${props.mode === "Dark" ? "white" : "black"}`,
                   }}
@@ -140,13 +149,14 @@ const Navbar = (props) => {
                 role="switch"
                 id="flexSwitchCheckDefault"
                 onClick={props.toggleMode}
-                style={{ cursor: 'pointer' }}
+                style={{cursor:'pointer'}}
               />
               <label
-                className={`form-check-label pointer-cursor text-${props.mode === "Dark" ? "white" : "primary"
-                  }`}
+                className={`form-check-label pointer-cursor text-${
+                  props.mode === "Dark" ? "white" : "primary"
+                }`}
                 htmlFor="flexSwitchCheckDefault"
-                type="button" style={{ cursor: 'pointer' }}>
+                type="button" style={{cursor:'pointer'}}>
                 Dark Mode
               </label>
             </div>
