@@ -36,11 +36,13 @@ const News = (props) => {
   useEffect(() => {
     setLoading(true);
     updateNews();
-  }, [page]);
+  }, []);
 
   const handleNextClick = async () => {
+    console.log('clicked')
     if (!fetching) {
       setPage((prevPage) => prevPage + 1);
+      console.log('done');
     }
     // setPage((prevPage)=> prevPage + 1)
     // updateNews()
@@ -62,9 +64,8 @@ const News = (props) => {
           style={{ border: "0px solid red" }}>
           {!loading && (
             <h2
-              className={`my-3 text-${
-                props.mode === "Dark" ? "white" : "black"
-              }`}>
+              className={`my-3 text-${props.mode === "Dark" ? "white" : "black"
+                }`}>
               Top Headlines on{" "}
               <span className={`text-primary`}>
                 {capitalizeFirsLetter(props.category)}
