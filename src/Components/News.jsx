@@ -65,11 +65,11 @@ const News = (props) => {
             >
               NewsMonkey - Top Headlines on
               <span className="text-primary">
-                {capitalizeFirsLetter(props.category)}
+                &nbsp;{capitalizeFirsLetter(props.category)}
               </span>
             </h1>
           )}
-          {!loading && articles &&(
+          {!loading && articles && (
             <span
               className="mx-2 flex-end d-flex px-3 py-1 text-center text-white"
               style={{
@@ -85,7 +85,13 @@ const News = (props) => {
           {!loading && !articles && (
             <div>API request access has reached its limit</div>
           )}
-          {loading && <Spinner mode={props.mode} category={props.category}/>}
+          {loading && (
+            <Spinner
+              mode={props.mode}
+              category={props.category}
+              capitalizeFirsLetter={props.capitalizeFirsLetter}
+            />
+          )}
           <div className="container row my-5" style={{}}>
             {!loading &&
               articles &&
@@ -94,6 +100,7 @@ const News = (props) => {
                 return (
                   <div className="col-md-3" key={element.url}>
                     <NewsItem
+                      isLoading={loading}
                       title={element.title ? element.title.slice(0, 45) : ""}
                       description={
                         element.description
@@ -115,7 +122,7 @@ const News = (props) => {
               <button
                 disabled={page <= 1 || fetching}
                 type="button"
-                className="btn btn-dark"
+                className="btn btn-black text-white bg-black"
                 style={{ width: "120px", border: "2px solid rgb(13,110,270)" }}
                 onClick={handlePrevClick}
               >
@@ -129,7 +136,7 @@ const News = (props) => {
                   fetching
                 }
                 type="button"
-                className="btn btn-dark mx-4"
+                className="btn btn-black text-white bg-black mx-4"
                 style={{ width: "120px", border: "2px solid rgb(13,110,270)" }}
                 onClick={handleNextClick}
               >

@@ -23,14 +23,14 @@ const App = () => {
       document.body.style.backgroundColor = "white";
     }
   }
-  document.body.style.backgroundColor = `${mode === "Dark" ? "#484848" : "white"}`;
+  document.body.style.backgroundColor = `${mode === "Dark" ? "black" : "white"}`;
   return (
     <>
       <Router>
         <Navbar mode={mode} toggleMode={toggleMode} />
         <LoadingBar
           height={3}
-          color={`${mode === "Dark" ? "white" : "blue"}`}
+          color={`${mode === "Dark" ? "white" : "rgb(13, 110, 253)"}`}
           backgroundColor={`${mode === 'Dark' ? 'white' : 'black'}`} progress={progress}
         />
         <Routes>
