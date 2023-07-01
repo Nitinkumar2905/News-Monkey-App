@@ -83,7 +83,7 @@ const News = (props) => {
             </span>
           )}
           {!loading && !articles && (
-            <div>API request access has reached its limit</div>
+            <div style={{marginTop:'10rem'}}>API request access has reached its limit</div>
           )}
           {loading && (
             <Spinner
