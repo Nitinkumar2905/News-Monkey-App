@@ -1,5 +1,4 @@
 import React from 'react';
-// import loading from './loading_gif.gif';
 
 const Spinner=(props)=>{
     return (
