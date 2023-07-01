@@ -35,6 +35,7 @@ const News = (props) => {
   useEffect(() => {
     setLoading(true);
     updateNews();
+    // eslint-disable-next-line
   }, [page]);
 
   const handleNextClick = async () => {
