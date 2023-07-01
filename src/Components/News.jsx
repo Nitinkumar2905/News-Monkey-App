@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import PropTypes from "prop-types";
-// import {v4 as uuidv4} from 'uuid'
 
 const News = (props) => {
   const [articles, setArticles] = useState([]);
@@ -63,8 +62,7 @@ const News = (props) => {
                 props.mode === "Dark" ? "white" : "black"
               }`}
             >
-              {" "}
-              NewsMonkey - Top Headlines on{" "}
+              NewsMonkey - Top Headlines on
               <span className="text-primary">
                 {capitalizeFirsLetter(props.category)}
               </span>

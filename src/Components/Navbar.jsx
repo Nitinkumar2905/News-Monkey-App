@@ -22,7 +22,6 @@ const Navbar = (props) => {
               }}
               alt=""
             />
-            {/* NewsMonkey */}
           </Link>
           <button
             className="navbar-toggler"
