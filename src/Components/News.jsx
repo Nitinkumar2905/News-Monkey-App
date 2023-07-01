@@ -70,7 +70,7 @@ const News = (props) => {
               </span>
             </h1>
           )}
-          {!loading && (
+          {!loading && articles &&(
             <span
               className="mx-2 flex-end d-flex px-3 py-1 text-center text-white"
               style={{
@@ -86,7 +86,7 @@ const News = (props) => {
           {!loading && !articles && (
             <div>API request access has reached its limit</div>
           )}
-          {loading && <Spinner />}
+          {loading && <Spinner mode={props.mode} category={props.category}/>}
           <div className="container row my-5" style={{}}>
             {!loading &&
               articles &&
