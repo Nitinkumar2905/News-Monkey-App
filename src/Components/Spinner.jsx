@@ -1,10 +1,10 @@
 import React from 'react';
-import loading from './loading_gif.gif';
+// import loading from './loading_gif.gif';
 
-const Spinner=()=>{
+const Spinner=(props)=>{
     return (
       <div className='text-center'>
-        <img src={loading} alt="" />
+        <span className={`fs-3 text-${props.mode==="Dark"?"light":"black"}`}>Loading top headlines for <span className={`text-primary`}>{props.category} news.......</span></span>
       </div>
     )
 }
