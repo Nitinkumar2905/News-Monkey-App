@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import logo from "./logo.jpeg";
+import logo from "./images/logo.jpeg";
 import dark from "./images/dark mode.png";
 import light from "./images/light mode.png";
 import "./Navbar.css";
@@ -77,14 +77,14 @@ const Navbar = (props) => {
               <li className="nav-item">
                 <Link
                   className={`text-hover nav-link ${
-                    location.pathname === "/general"
+                    location.pathname === "/"
                       ? "text-decoration-underline"
                       : "text-decoration-none"
                   } link-underline-primary link-offset-2 text-${
                     props.mode === "Dark" ? "light" : "primary"
                   }`}
                   aria-current="page"
-                  to="/general"
+                  to="/"
                 >
                   Home
                 </Link>
