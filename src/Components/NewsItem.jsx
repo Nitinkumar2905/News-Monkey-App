@@ -10,7 +10,7 @@ const NewsItem = (props) => {
               ? "https://data1.ibtimes.co.in/en/full/784804/sony-shut-pixelopus-developer-video-game-concrete-genie.jpg"
               : imageUrl
           }
-          className="card-img-top"
+          className="card-img-top" style={{height:'13rem',objectFit:'cover'}}
           alt="..."
         />
         <div className="card-body">
